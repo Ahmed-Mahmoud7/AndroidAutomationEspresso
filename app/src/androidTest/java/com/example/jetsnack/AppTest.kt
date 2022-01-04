@@ -22,6 +22,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.example.jetsnack.ui.JetsnackApp
 import com.example.jetsnack.ui.MainActivity
+import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -41,8 +42,10 @@ class AppTest {
     @Test
     fun app_launches() {
         // Check app launches at the correct destination
-        composeTestRule.onNodeWithText("HOME").assertIsDisplayed()
-        composeTestRule.onNodeWithText("Android's picks").assertIsDisplayed()
+        var homeButton = composeTestRule.onNodeWithText("HOME")
+        var dummytextcheck = composeTestRule.onNodeWithText("Android's picks")
+        homeButton.assertIsDisplayed()
+        dummytextcheck.assertIsDisplayed()
     }
 
     @Test
@@ -68,5 +71,11 @@ class AppTest {
     fun app_canNavigateToDetailPage() {
         composeTestRule.onNodeWithText("Chips").performClick()
         composeTestRule.onNodeWithText("Lorem ipsum", substring = true).assertIsDisplayed()
+    }
+
+    @After
+    fun tearDown() {
+        // close or kill the app
+
     }
 }

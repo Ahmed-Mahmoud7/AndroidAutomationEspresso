@@ -1,4 +1,5 @@
 package com.example.jetsnack.pages
 
-class Cart {
+class Cart : BasePage() {
+
 }

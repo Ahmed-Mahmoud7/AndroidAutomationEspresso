@@ -109,6 +109,7 @@ dependencies {
     implementation Libs.Accompanist.flowlayouts
 
     implementation Libs.Coil.coilCompose
+    implementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 
     androidTestImplementation Libs.JUnit.junit
     androidTestImplementation Libs.AndroidX.Test.core
@@ -118,4 +119,9 @@ dependencies {
     androidTestImplementation Libs.AndroidX.Test.Ext.junit
     androidTestImplementation Libs.Coroutines.test
     androidTestImplementation Libs.AndroidX.Compose.uiTest
+    // Espresso dependencies
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.4.0')
+    androidTestImplementation('androidx.test:runner:1.4.0')
+    androidTestImplementation('androidx.test:rules:1.4.0')
+
 }
